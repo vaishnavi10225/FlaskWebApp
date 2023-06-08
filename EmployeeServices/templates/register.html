@@ -1,0 +1,57 @@
+{% include 'navbar.html' %}
+<html>
+<head>
+<style>
+.login-dark
+{
+background-color:rgb(30,40,51);
+text-align:center;
+padding:20px;
+width:350px;
+height:450px;
+margin-top: 50px;
+border-radius:5px;
+}
+
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+</style>
+</head>
+<body>
+<center>
+ <div class="login-dark">
+	 <label style="color:white">{{ msg }}</label>
+        <form action="{{ url_for('register') }}" 	method="post">
+            <h2 class="sr-only" style="color:#6666ff">Add Employees Details</h2>
+            <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+
+            <input type="hidden" id="empid" name="empid">
+
+            <div class="form-group" style="padding:10px">
+                <input class="form-control" style="width:240px;padding:5px;" type="text" id="name" name="name" placeholder="Name" required>
+			</div>
+            <div class="form-group" style="padding:10px">
+                <input class="form-control" style="width:240px;padding:5px;" type="text" id="email" name="email" placeholder="EmailId" required></div>
+			
+            <div class="form-group" style="padding:10px;">
+			<input class="form-control" style="width:240px;padding:5px;" placeholder="Position" id="position" name="position" required></textarea>
+			</div>
+			
+            
+            <div class="form-group" style="padding:10px;">
+            <input class="form-control" style="width:240px;padding:5px;" placeholder="Phone Number" id="phone" name="phone" required></textarea>
+			</div>
+            
+            <div class="form-group" style="padding:10px">
+            <input class="form-control" style="width:240px;padding:5px;" placeholder="Location" id="location" name="location" required></textarea>
+            </div>
+            
+            <div class="form-group" style="padding:10px">
+			<button class="btn btn-primary btn-block" style="background-color:rgb(33,74,128);width:169px;border:none;color:white;padding:5px 10px 5px 10px;border-radius:2px;" type="submit">Submit</button></div>
+			</form>
+    </div>
+</center>
+</body>
+</html>

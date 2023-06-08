@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login Form</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1 style="text-align:center;">Employees Management </h1>
+    <div class="center">
+
+        <h1>Login</h1>
+        <form action="{{url_for('login') }}" method="post">
+            {% if message is defined and message %}
+            <div class="alert alert-warning">{{ message }}</div>
+            {% endif %}
+
+            <div class="txt_field">
+                <input type="email" class="form-control" name="email" id="email" maxlength="50" placeholder="Email Id" required>
+                <span></span>
+            </div>
+            <div class="txt_field"> 
+                <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+                <span></span>
+            </div>
+            
+            <div class="pass"></div>
+            <input type="submit" value="Login" name="login" id="login">
+
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+{% include 'navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/nav.css">
+</head>
+<body>
+    <div class="container">
+        
+        <br>
+        <h2 style="text-align: center;">Employees List</h2>
+        <br>
+        {% if message is defined and message %}
+            <div class="alert alert-warning">{{ message }}</div>
+            {% endif %}
+    <center>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Emp_ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Position</th>
+                    <th>Phone</th>
+                    <th>Location</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for emp in employees %}
+                <tr>
+                    <td>{{emp.empid}}</td>
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.email}}</td>
+                    <td>{{emp.position}}</td>
+                    <td>{{emp.phone}}</td>
+                    <td>{{emp.location}}</td>
+                    <td><button><a href="{{url_for('view',empid=emp.empid)}}" class="btn btn-success"><span style="color:blue;text-decoration: none;">View</span></a></button></td>
+                    <td><button><a href="{{url_for('update',empid=emp.empid)}}" class="btn btn-primary"><span style="color:green;text-decoration: none;">Update</span></a></button></td>
+                    <td><button><a href="{{url_for('delete',empid=emp.empid)}}" class="btn btn-danger"><span style="color:red;text-decoration: none;">Delete</span></a></button></td>
+                    
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </center>
+    </div>
+</body>
+</html>

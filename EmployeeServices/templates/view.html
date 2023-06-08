@@ -1,0 +1,24 @@
+{% include 'navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees Details</title>
+    <link rel="stylesheet" href="/static/nav.css">
+</head>
+<body>
+    <div class="container">
+        <br>
+        <h1>Employees Details</h1>
+        <br>
+        <h3>{{employees.name}}</h3>
+        <p><strong>Employee Id:</strong>{{employees.empid}}</p>
+        <p><strong>Email:</strong>{{employees.email}}</p>
+        <p><strong>Position:</strong>{{employees.position}}</p>
+        <p><strong>Phone:</strong>{{employees.phone}}</p>
+        <p><strong>Location:</strong>{{employees.location}}</p>
+    </div>
+</body>
+</html>
